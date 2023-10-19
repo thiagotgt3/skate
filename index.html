@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
+
+
+
+
+
+	
     <meta charset="UTF-8"/>
     <link rel="manifest" href="manifest.webmanifest">
 
@@ -18,6 +26,10 @@
             padding: 0;
             background-color: #000000;
             overflow: hidden;
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            height: 100vh; /* Ocupa toda a altura da janela do navegador */
         }
 
         #canvasArea {
@@ -27,14 +39,15 @@
         }
 
         #gamemonetize-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1; /* Certifique-se de que o anúncio fique na frente do jogo */
+            width: 45%;
+            height: 299px;
         }
     </style>
+
+
+
+
+
 
     <!-- Libs and GDJS core files : -->
     <script src="libs/jshashtable.js" crossorigin="anonymous"></script>
@@ -139,8 +152,6 @@
     <script type="text/javascript">
         window.VIDEO_OPTIONS = {
             gameid: "l31bge6jlytwxi3tsdpgsbp5u04i07dg",
-            width: "45%",
-            height: "299px",
             color: "#3f007e"
         };
 
