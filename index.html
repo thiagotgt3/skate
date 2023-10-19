@@ -42,6 +42,18 @@
             width: 45%;
             height: 299px;
         }
+
+
+ #ad-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999; /* Coloque um valor alto para que o anúncio fique na frente do jogo. */
+        /* Adicione outras propriedades de estilo, como largura, altura, etc. */
+    }
+
+
+	    
     </style>
 
 
@@ -147,24 +159,35 @@
     <script src="data.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="gamemonetize-video"></div>
-    
-    <script type="text/javascript">
-        window.VIDEO_OPTIONS = {
-            gameid: "l31bge6jlytwxi3tsdpgsbp5u04i07dg",
-            color: "#3f007e"
-        };
 
-        (function (a, b, c) {
-            var d = a.getElementsByTagName(b)[0];
-            if (!a.getElementById(c)) {
-                var script = a.createElement(b);
-                script.id = c;
-                script.src = "https://api.gamemonetize.com/video.js?v=" + Date.now();
-                d.parentNode.insertBefore(script, d);
-            }
-        })(document, "script", "gamemonetize-video-api");
-    </script>
+
+
+<div id="ad-container">
+    <div id="gamemonetize-video">
+        <script type="text/javascript">
+            window.VIDEO_OPTIONS = {
+                gameid: "l31bge6jlytwxi3tsdpgsbp5u04i07dg",
+                color: "#3f007e"
+            };
+
+            (function (a, b, c) {
+                var d = a.getElementsByTagName(b)[0];
+                if (!a.getElementById(c)) {
+                    var script = a.createElement(b);
+                    script.id = c;
+                    script.src = "https://api.gamemonetize.com/video.js?v=" + Date.now();
+                    d.parentNode.insertBefore(script, d);
+                }
+            })(document, "script", "gamemonetize-video-api");
+        </script>
+    </div>
+</div>
+
+
+
+
+
+	
 
 
 
