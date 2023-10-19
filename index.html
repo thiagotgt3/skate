@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <link rel="manifest" href="manifest.webmanifest">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
     <link rel="icon" type="image/png" href="hoo.png">
+
     <style>
         body {
             margin: 0;
@@ -15,33 +19,24 @@
             background-color: #000000;
             overflow: hidden;
         }
+
         #canvasArea {
             margin-left: auto;
             margin-right: auto;
             overflow: hidden;
         }
+
+        #gamemonetize-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Certifique-se de que o anúncio fique na frente do jogo */
+        }
     </style>
 
-    <!-- Gamemonetize Ad -->
-    <script type="text/javascript">
-        window.VIDEO_OPTIONS = {
-            gameid: "l31bge6jlytwxi3tsdpgsbp5u04i07dg",
-            width: "100%",
-            height: "480px",
-            color: "#3f007e"
-        };
-        (function (a, b, c) {
-            var d = a.getElementsByTagName(b)[0];
-            if (!a.getElementById(c)) {
-                var script = a.createElement(b);
-                script.id = c;
-                script.src = "https://api.gamemonetize.com/video.js?v=" + Date.now();
-                d.parentNode.insertBefore(script, d);
-            }
-        })(document, "script", "gamemonetize-video-api");
-    </script>
-
-    <!-- GDJS Core Scripts -->
+    <!-- Libs and GDJS core files : -->
     <script src="libs/jshashtable.js" crossorigin="anonymous"></script>
     <script src="logger.js" crossorigin="anonymous"></script>
     <script src="gd.js" crossorigin="anonymous"></script>
@@ -139,19 +134,31 @@
     <script src="data.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Include your game initialization script here -->
+    <div id="gamemonetize-video"></div>
+    
+    <script type="text/javascript">
+        window.VIDEO_OPTIONS = {
+            gameid: "l31bge6jlytwxi3tsdpgsbp5u04i07dg",
+            width: "100%",
+            height: "480px",
+            color: "#3f007e"
+        };
+
+        (function (a, b, c) {
+            var d = a.getElementsByTagName(b)[0];
+            if (!a.getElementById(c)) {
+                var script = a.createElement(b);
+                script.id = c;
+                script.src = "https://api.gamemonetize.com/video.js?v=" + Date.now();
+                d.parentNode.insertBefore(script, d);
+            }
+        })(document, "script", "gamemonetize-video-api");
+    </script>
+
     <script>
         (function() {
-            // Initialization
-            var game = new gdjs.RuntimeGame(gdjs.projectData, {});
-            // Create a renderer
-            game.getRenderer().createStandardCanvas(document.body);
-            // Bind keyboards/mouse/touch events
-            game.getRenderer().bindStandardEvents(game.getInputManager(), window, document);
-            // Load all assets and start the game
-            game.loadAllAssets(function() {
-                game.startGameLoop();
-            });
+            // Inicialização do jogo (mantenha como no exemplo anterior)
+            // ...
         })();
     </script>
 </body>
