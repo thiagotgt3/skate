@@ -15,7 +15,9 @@
 
     <link rel="icon" type="image/png" href="hoo.png">
 
-    <style>
+    
+
+ <style>
         body {
             margin: 0;
             padding: 0;
@@ -25,7 +27,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            position: relative; /* Adicione esta propriedade */
+            position: relative;
         }
 
         #canvasArea {
@@ -40,11 +42,12 @@
             left: 50%; /* Centraliza horizontalmente no meio da tela */
             transform: translate(-50%, -50%); /* Centraliza perfeitamente o conteúdo */
             z-index: 999; /* Coloque um valor alto para que o anúncio fique na frente do jogo. */
+            width: 45%; /* Defina a largura do contêiner do anúncio conforme necessário. */
+            max-width: 90%; /* Defina uma largura máxima para garantir que o anúncio não seja muito grande. */
         }
     </style>
 
-
-
+	
 
 
     <!-- Libs and GDJS core files : -->
@@ -148,6 +151,8 @@
 
 
 
+
+
 <div id="ad-container">
         <div id="gamemonetize-video">
             <script type="text/javascript">
@@ -167,10 +172,11 @@
             </script>
         </div>
     </div>
-    <script>
 
 
 
+
+	
 
 
 	
