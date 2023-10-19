@@ -134,48 +134,44 @@
 
 
 
-<script type="text/javascript">
+
+	<script type="text/javascript">
    window.VIDEO_OPTIONS = {
        gameid : "l31bge6jlytwxi3tsdpgsbp5u04i07dg",
        width  : "50%",
        height : "240px",
        color  : "#000"
    };
+
    (function (a, b, c) {
-      var d = a.getElementsByTagName(b)[0];
-      a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://api.gamemonetize.com/video.js?v=" + Date.now(), d.parentNode.insertBefore(a, d))
+       var d = a.getElementsByTagName(b)[0];
+       if (!a.getElementById(c)) {
+           var script = a.createElement(b);
+           script.id = c;
+           script.src = "https://api.gamemonetize.com/sdk.js";
+           d.parentNode.insertBefore(script, d);
+       }
+   })(document, "script", "gamemonetize-sdk"); 
+
+   (function (a, b, c) {
+       var d = a.getElementsByTagName(b)[0];
+       if (!a.getElementById(c)) {
+           var script = a.createElement(b);
+           script.id = c;
+           script.src = "https://api.gamemonetize.com/video.js?v=" + Date.now();
+           d.parentNode.insertBefore(script, d);
+       }
    })(document, "script", "gamemonetize-video-api"); 
-</script>  
-
-
-
-
-
-
-	
-
-<script type="text/javascript">
-   window.SDK_OPTIONS = {
-      gameId: "l31bge6jlytwxi3tsdpgsbp5u04i07dg",
-      onEvent: function (a) {
-         switch (a.name) {
-            case "SDK_GAME_PAUSE": 
-               break;
-            case "SDK_GAME_START":        
-               break;
-            case "SDK_READY":          
-               break;
-         }
-      }
-   };
-(function (a, b, c) {
-   var d = a.getElementsByTagName(b)[0];
-   a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://api.gamemonetize.com/sdk.js", d.parentNode.insertBefore(a, d))
-})(document, "script", "gamemonetize-sdk"); 
 </script>
 
-	
+<div id="gamemonetize-video"></div>
 
+
+
+
+<div id="gamemonetize-video"></div>
+
+	
 
     
 	<script>
@@ -197,12 +193,7 @@
     })();
 
 	</script>
-	
-<div id="gamemonetize-video"></div>
 
-	 <script src="show2.js"></script>
-
-	
 	
 	
 </body>
