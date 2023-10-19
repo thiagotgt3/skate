@@ -132,46 +132,23 @@
 <body>
 
 
+	
 
-
-
-	<script type="text/javascript">
+<div id="gamemonetize-video"></div>
+<script type="text/javascript">
    window.VIDEO_OPTIONS = {
        gameid : "l31bge6jlytwxi3tsdpgsbp5u04i07dg",
-       width  : "50%",
-       height : "240px",
-       color  : "#000"
+       width  : "100%",
+       height : "480px",
+       color  : "#3f007e"
    };
-
    (function (a, b, c) {
-       var d = a.getElementsByTagName(b)[0];
-       if (!a.getElementById(c)) {
-           var script = a.createElement(b);
-           script.id = c;
-           script.src = "https://api.gamemonetize.com/sdk.js";
-           d.parentNode.insertBefore(script, d);
-       }
-   })(document, "script", "gamemonetize-sdk"); 
-
-   (function (a, b, c) {
-       var d = a.getElementsByTagName(b)[0];
-       if (!a.getElementById(c)) {
-           var script = a.createElement(b);
-           script.id = c;
-           script.src = "https://api.gamemonetize.com/video.js?v=" + Date.now();
-           d.parentNode.insertBefore(script, d);
-       }
+      var d = a.getElementsByTagName(b)[0];
+      a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://api.gamemonetize.com/video.js?v=" + Date.now(), d.parentNode.insertBefore(a, d))
    })(document, "script", "gamemonetize-video-api"); 
-</script>
-
-<div id="gamemonetize-video"></div>
+</script>  
 
 
-
-
-<div id="gamemonetize-video"></div>
-
-	
 
     
 	<script>
@@ -194,7 +171,6 @@
 
 	</script>
 
-	
 	
 </body>
 </html>
